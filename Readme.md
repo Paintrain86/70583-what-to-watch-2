@@ -1,7 +1,7 @@
 # Личный проект «Что посмотреть» [![Build status][travis-image]][travis-url]
 
 * Студент: [Евгений Карпов](https://up.htmlacademy.ru/react/2/user/70583).
-* Наставник: `Неизвестно`.
+* Наставник: [Влад Бажанов](https://htmlacademy.ru/profile/id1222531).
 
 ---
 
