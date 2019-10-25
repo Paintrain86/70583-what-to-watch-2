@@ -99,7 +99,7 @@ const Main = (props) => {
           </li>
         </ul>
 
-        <MoviesList movies={movies} />
+        <MoviesList movies={movies} onMoreClick={() => {}} />
       </section>
 
       <footer className="page-footer">
