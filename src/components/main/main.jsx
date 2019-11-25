@@ -4,9 +4,11 @@ import PropTypes from 'prop-types';
 import MoviesList from '../movies-list/movies-list.jsx';
 
 const Main = (props) => {
-  const {movies} = props;
+  const {
+    movies
+  } = props;
 
-  return <React.Fragment>
+  return (<>
     <section className="movie-card">
       <div className="movie-card__bg">
         <img src="img/bg-the-grand-budapest-hotel.jpg" alt="The Grand Budapest Hotel" />
@@ -99,7 +101,10 @@ const Main = (props) => {
           </li>
         </ul>
 
-        <MoviesList movies={movies} onMoreClick={() => {}} />
+        <MoviesList
+          movies={movies}
+          onMoreClick={() => {}}
+        />
       </section>
 
       <footer className="page-footer">
@@ -116,11 +121,14 @@ const Main = (props) => {
         </div>
       </footer>
     </div>
-  </React.Fragment>;
+  </>);
 };
 
 Main.propTypes = {
-  movies: PropTypes.array
+  movies: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string,
+    picture: PropTypes.string
+  })).isRequired
 };
 
 export default Main;

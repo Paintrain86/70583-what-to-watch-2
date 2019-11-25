@@ -1,13 +1,29 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 import Main from "../main/main.jsx";
 
-const App = () => {
-  const movies = [`Big Bang Theory`, `Joker`, `Matrix`, `Gorbataya gora`, `House M.D.`, `50 first kisses`, `Антикиллер`, `Папины дочки`];
+class App extends React.PureComponent {
+  constructor(props) {
+    super(props);
+  }
 
-  return <Main
-    movies={movies}
-  />;
+  render() {
+    const {
+      movies
+    } = this.props;
+
+    return <Main
+      movies={movies}
+    />;
+  }
+}
+
+App.propTypes = {
+  movies: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string,
+    picture: PropTypes.string
+  })).isRequired
 };
 
 export default App;
