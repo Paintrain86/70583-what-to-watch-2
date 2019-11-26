@@ -7,38 +7,36 @@ class Videoplayer extends React.PureComponent {
 
     this.state = {
       progress: 0,
-      isLoading: true,
-      isPlaying: props.isPlaying,
-      isMuted: true
+      isNeedPlaying: props.isNeedPlaying,
+      isPlaying: false
     };
     this._videoRef = React.createRef();
 
     this.timeout = 1000;
     this._playTimeout = null;
 
-    this._setMute = this._setMute.bind(this);
-    this._manageVideo = this._manageVideo.bind(this);
+    this._managePlayingVideo = this._managePlayingVideo.bind(this);
+    this._clearTimeoutWithPlay = this._clearTimeoutWithPlay.bind(this);
   }
 
-  _setMute() {
-    this.setState((prevState) => ({
-      isMuted: !prevState.muted
-    }));
+  _clearTimeoutWithPlay(value) {
+    this.setState({
+      isPlaying: value
+    }, () => {
+      clearTimeout(this._playTimeout);
+      this._playTimeout = null;
+    });
   }
 
-  _manageVideo() {
-    if (this.state.isPlaying) {
-      if (!this._playTimeout) {
+  _managePlayingVideo() {
+    if (this.state.isNeedPlaying) {
+      if (!this.state.isPlaying && this._playTimeout === null) {
         this._playTimeout = setTimeout(() => {
-          this._player.play();
-          clearTimeout(this._playTimeout);
-          this._playTimeout = null;
+          this._clearTimeoutWithPlay(true);
         }, this.timeout);
       }
     } else {
-      clearTimeout(this._playTimeout);
-      this._playTimeout = null;
-      this._player.load();
+      this._clearTimeoutWithPlay(false);
     }
   }
 
@@ -46,18 +44,6 @@ class Videoplayer extends React.PureComponent {
     this._player = this._videoRef.current;
 
     if (this._player !== null) {
-      this._player.oncanplaythrough = () => {
-        this.setState({
-          isLoading: false
-        });
-      };
-
-      this._player.ontimeupdate = () => {
-        this.setState({
-          progress: this._player.currentTime
-        });
-      };
-
       this._player.onended = () => {
         this._player.load();
       };
@@ -65,35 +51,38 @@ class Videoplayer extends React.PureComponent {
   }
 
   componentDidUpdate() {
-    if (this.props.isPlaying !== this.state.isPlaying) {
+    if (this.props.isNeedPlaying !== this.state.isNeedPlaying) {
       this.setState({
-        isPlaying: this.props.isPlaying
+        isNeedPlaying: this.props.isNeedPlaying
       });
     } else {
       if (this._player !== null) {
-        this._manageVideo();
+        this._managePlayingVideo();
+        if (this.state.isPlaying) {
+          this._player.play();
+        } else {
+          this._player.load();
+        }
       }
     }
   }
 
   componentWillUnmount() {
     if (this._player !== null) {
-      this._player.oncanplaythrough = ``;
-      this._player.ontimeupdate = ``;
       this._player.onended = ``;
     }
   }
 
   render() {
     const {
-      id,
       title,
       poster,
-      previews
+      previews,
+      isMuted
     } = this.props;
 
     const sources = previews.map((item, i) => (
-      <source src={item.src} type={item.type} key={`video-${id}${i}`} />
+      <source src={item.src} type={item.type} key={`video-source-${i}`} />
     ));
 
     if (sources.length === 0) {
@@ -101,7 +90,7 @@ class Videoplayer extends React.PureComponent {
     }
 
     return (
-      <video ref={this._videoRef} controls poster={poster} width="100%" muted={this.state.isMuted} onClick={this._setMute}>
+      <video ref={this._videoRef} poster={poster} width="100%" muted={isMuted}>
         {sources}
         Sorry, your browser is a piece of shit
       </video>
@@ -110,14 +99,14 @@ class Videoplayer extends React.PureComponent {
 }
 
 Videoplayer.propTypes = {
-  id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   poster: PropTypes.string.isRequired,
   previews: PropTypes.arrayOf(PropTypes.shape({
     src: PropTypes.string,
     type: PropTypes.string
   })),
-  isPlaying: PropTypes.bool
+  isNeedPlaying: PropTypes.bool.isRequired,
+  isMuted: PropTypes.bool
 };
 
 export default Videoplayer;

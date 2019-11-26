@@ -8,15 +8,18 @@ class MoviesItem extends React.PureComponent {
     super(props);
 
     this.state = {
-      isActive: props.isActive
+      isActive: props.isActive,
+      isMuted: true
     };
 
-    this.clickMoreHandler = this.clickMoreHandler.bind(this);
-    this.mouseEnterHandler = this.mouseEnterHandler.bind(this);
-    this.mouseLeaveHandler = this.mouseLeaveHandler.bind(this);
+    this._clickDetailsHandler = this._clickDetailsHandler.bind(this);
+    this._mouseEnterHandler = this._mouseEnterHandler.bind(this);
+    this._mouseLeaveHandler = this._mouseLeaveHandler.bind(this);
+    this._toggleActiveState = this._toggleActiveState.bind(this);
+    this._toggleMutedState = this._toggleMutedState.bind(this);
   }
 
-  clickMoreHandler(evt) {
+  _clickDetailsHandler(evt) {
     evt.preventDefault();
 
     const {onNameClick} = this.props;
@@ -26,47 +29,60 @@ class MoviesItem extends React.PureComponent {
     }
   }
 
-  toggleActiveState(value) {
+  _toggleActiveState(value) {
     this.setState({
       isActive: value
     });
   }
 
-  mouseEnterHandler() {
+  _toggleMutedState(value) {
+    this.setState({
+      isMuted: value
+    });
+  }
+
+  _mouseEnterHandler() {
     const {onMouseEnter} = this.props;
 
     if (typeof onMouseEnter === `function`) {
       onMouseEnter();
     }
 
-    this.toggleActiveState(true);
+    this._toggleActiveState(true);
   }
 
-  mouseLeaveHandler() {
+  _mouseLeaveHandler() {
     const {onMouseLeave} = this.props;
 
     if (typeof onMouseLeave === `function`) {
       onMouseLeave();
     }
 
-    this.toggleActiveState(false);
+    this._toggleActiveState(false);
   }
 
   render() {
     const {
-      movie,
       movie: {title},
+      movie: {poster},
+      movie: {previews},
       isActive
     } = this.props;
 
     const classNames = `small-movie-card catalog__movies-card ${(isActive) ? `active` : ``}`;
 
-    return (<article className={classNames} onMouseEnter={this.mouseEnterHandler} onMouseLeave={this.mouseLeaveHandler}>
-      <div className="small-movie-card__image">
-        <Videoplayer isPlaying={isActive} {...movie} />
+    return (<article className={classNames} onMouseEnter={this._mouseEnterHandler} onMouseLeave={this._mouseLeaveHandler}>
+      <div className="small-movie-card__image" onClick={() => this._toggleMutedState(!this.state.isMuted)}>
+        <Videoplayer
+          poster={poster}
+          title={title}
+          previews={previews}
+          isNeedPlaying={isActive}
+          isMuted={this.state.isMuted}
+        />
       </div>
       <h3 className="small-movie-card__title">
-        <a className="small-movie-card__link" href="movie-page.html" onClick={this.clickMoreHandler}>{title}</a>
+        <a className="small-movie-card__link" href="movie-page.html" onClick={this._clickDetailsHandler}>{title}</a>
       </h3>
     </article>);
   }

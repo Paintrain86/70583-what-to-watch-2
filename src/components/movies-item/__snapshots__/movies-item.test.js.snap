@@ -8,13 +8,19 @@ exports[`MoviesItem component is rendered correctly 1`] = `
 >
   <div
     className="small-movie-card__image"
+    onClick={[Function]}
   >
-    <img
-      alt="Тестовая киношка"
-      height="175"
-      src="images/image.jpg"
-      width="280"
-    />
+    <video
+      muted={true}
+      poster="images/image.jpg"
+      width="100%"
+    >
+      <source
+        src="movies/movie.mp4"
+        type="video/mp4"
+      />
+      Sorry, your browser is a piece of shit
+    </video>
   </div>
   <h3
     className="small-movie-card__title"

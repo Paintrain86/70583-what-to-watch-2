@@ -10,8 +10,15 @@ describe(`MoviesItem`, () => {
     const clickName = jest.fn();
     const testProps = {
       movie: {
+        id: 1,
         title: `Тестовая киношка`,
-        picture: `images/image.jpg`
+        poster: `images/image.jpg`,
+        previews: [
+          {
+            src: `movies/movie.mp4`,
+            type: `video/mp4`
+          }
+        ]
       },
       isActive: false,
       onNameClick: clickName
@@ -31,13 +38,21 @@ describe(`MoviesItem`, () => {
     const onLeave = jest.fn();
     const testProps = {
       movie: {
+        id: 1,
         title: `Тестовая киношка`,
-        picture: `images/image.jpg`
+        poster: `images/image.jpg`,
+        previews: [
+          {
+            src: `movies/movie.mp4`,
+            type: `video/mp4`
+          }
+        ]
       },
       isActive: false,
       onMouseEnter: onEnter,
       onMouseLeave: onLeave
     };
+
     const movie = shallow(<MoviesItem {...testProps}/>);
 
     expect(movie.state(`isActive`)).toBe(false);
