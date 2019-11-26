@@ -26,17 +26,17 @@ class MoviesList extends React.PureComponent {
       onMoreClick = () => {}
     } = this.props;
 
-    const items = movies.map((item, i) => {
+    const items = movies.map((item) => {
       return <MoviesItem
         movie={item}
         onMouseEnter={() => {
-          this.hoverHandler(i, true);
+          this.hoverHandler(item.id, true);
         }}
         onMouseLeave={() => {
-          this.hoverHandler(i, false);
+          this.hoverHandler(item.id, false);
         }}
-        isActive={this.state.activeCard === i}
-        key={`movie-${i}`}
+        isActive={this.state.activeCard === item.id}
+        key={`movie-${item.id}`}
       />;
     });
 
@@ -53,8 +53,13 @@ class MoviesList extends React.PureComponent {
 
 MoviesList.propTypes = {
   movies: PropTypes.arrayOf(PropTypes.shape({
-    title: PropTypes.string,
-    picture: PropTypes.string
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    poster: PropTypes.string.isRequired,
+    previews: PropTypes.arrayOf(PropTypes.shape({
+      src: PropTypes.string,
+      type: PropTypes.string
+    }))
   })).isRequired,
   onMoreClick: PropTypes.func
 };
