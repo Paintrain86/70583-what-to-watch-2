@@ -12,14 +12,14 @@ class MoviesItem extends React.PureComponent {
       isMuted: true
     };
 
-    this._clickDetailsHandler = this._clickDetailsHandler.bind(this);
-    this._mouseEnterHandler = this._mouseEnterHandler.bind(this);
-    this._mouseLeaveHandler = this._mouseLeaveHandler.bind(this);
+    this.handleClickMore = this.handleClickMore.bind(this);
+    this.handleMouseEnter = this.handleMouseEnter.bind(this);
+    this.handleMouseLeave = this.handleMouseLeave.bind(this);
     this._toggleActiveState = this._toggleActiveState.bind(this);
     this._toggleMutedState = this._toggleMutedState.bind(this);
   }
 
-  _clickDetailsHandler(evt) {
+  handleClickMore(evt) {
     evt.preventDefault();
 
     const {onNameClick} = this.props;
@@ -41,7 +41,7 @@ class MoviesItem extends React.PureComponent {
     });
   }
 
-  _mouseEnterHandler() {
+  handleMouseEnter() {
     const {onMouseEnter} = this.props;
 
     if (typeof onMouseEnter === `function`) {
@@ -51,7 +51,7 @@ class MoviesItem extends React.PureComponent {
     this._toggleActiveState(true);
   }
 
-  _mouseLeaveHandler() {
+  handleMouseLeave() {
     const {onMouseLeave} = this.props;
 
     if (typeof onMouseLeave === `function`) {
@@ -71,7 +71,7 @@ class MoviesItem extends React.PureComponent {
 
     const classNames = `small-movie-card catalog__movies-card ${(isActive) ? `active` : ``}`;
 
-    return (<article className={classNames} onMouseEnter={this._mouseEnterHandler} onMouseLeave={this._mouseLeaveHandler}>
+    return (<article className={classNames} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
       <div className="small-movie-card__image" onClick={() => this._toggleMutedState(!this.state.isMuted)}>
         <Videoplayer
           poster={poster}
@@ -82,7 +82,7 @@ class MoviesItem extends React.PureComponent {
         />
       </div>
       <h3 className="small-movie-card__title">
-        <a className="small-movie-card__link" href="movie-page.html" onClick={this._clickDetailsHandler}>{title}</a>
+        <a className="small-movie-card__link" href="movie-page.html" onClick={this.handleClickMore}>{title}</a>
       </h3>
     </article>);
   }
