@@ -264,13 +264,19 @@ Array [
         >
           <div
             className="small-movie-card__image"
+            onClick={[Function]}
           >
-            <img
-              alt="Тестовая киношка"
-              height="175"
-              src="images/image.jpg"
-              width="280"
-            />
+            <video
+              muted={true}
+              poster="images/image.jpg"
+              width="100%"
+            >
+              <source
+                src="movies/movie.mp4"
+                type="video/mp4"
+              />
+              Sorry, your browser is a piece of shit
+            </video>
           </div>
           <h3
             className="small-movie-card__title"
@@ -291,13 +297,19 @@ Array [
         >
           <div
             className="small-movie-card__image"
+            onClick={[Function]}
           >
-            <img
-              alt="Тестовая киношка2"
-              height="175"
-              src="images/image2.jpg"
-              width="280"
-            />
+            <video
+              muted={true}
+              poster="images/image2.jpg"
+              width="100%"
+            >
+              <source
+                src="movies/movie2.mp4"
+                type="video/mp4"
+              />
+              Sorry, your browser is a piece of shit
+            </video>
           </div>
           <h3
             className="small-movie-card__title"
@@ -308,60 +320,6 @@ Array [
               onClick={[Function]}
             >
               Тестовая киношка2
-            </a>
-          </h3>
-        </article>
-        <article
-          className="small-movie-card catalog__movies-card "
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          <div
-            className="small-movie-card__image"
-          >
-            <img
-              alt="Тестовая киношка3"
-              height="175"
-              src="images/image3.jpg"
-              width="280"
-            />
-          </div>
-          <h3
-            className="small-movie-card__title"
-          >
-            <a
-              className="small-movie-card__link"
-              href="movie-page.html"
-              onClick={[Function]}
-            >
-              Тестовая киношка3
-            </a>
-          </h3>
-        </article>
-        <article
-          className="small-movie-card catalog__movies-card "
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          <div
-            className="small-movie-card__image"
-          >
-            <img
-              alt="Тестовая киношка4"
-              height="175"
-              src="images/image4.jpg"
-              width="280"
-            />
-          </div>
-          <h3
-            className="small-movie-card__title"
-          >
-            <a
-              className="small-movie-card__link"
-              href="movie-page.html"
-              onClick={[Function]}
-            >
-              Тестовая киношка4
             </a>
           </h3>
         </article>

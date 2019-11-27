@@ -11,20 +11,26 @@ describe(`MoviesList`, () => {
     const testProps = {
       movies: [
         {
+          id: 1,
           title: `Тестовая киношка`,
-          picture: `images/image.jpg`
+          poster: `images/image.jpg`,
+          previews: [
+            {
+              src: `movies/movie.mp4`,
+              type: `video/mp4`
+            }
+          ]
         },
         {
+          id: 2,
           title: `Тестовая киношка2`,
-          picture: `images/image2.jpg`
-        },
-        {
-          title: `Тестовая киношка3`,
-          picture: `images/image3.jpg`
-        },
-        {
-          title: `Тестовая киношка4`,
-          picture: `images/image4.jpg`
+          poster: `images/image2.jpg`,
+          previews: [
+            {
+              src: `movies/movie2.mp4`,
+              type: `video/mp4`
+            }
+          ]
         }
       ],
       onMoreClick: clickMore
