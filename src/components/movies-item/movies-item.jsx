@@ -15,8 +15,8 @@ class MoviesItem extends React.PureComponent {
     this.handleClickMore = this.handleClickMore.bind(this);
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
-    this._toggleActiveState = this._toggleActiveState.bind(this);
-    this._toggleMutedState = this._toggleMutedState.bind(this);
+    this.toggleActiveState = this.toggleActiveState.bind(this);
+    this.toggleMutedState = this.toggleMutedState.bind(this);
   }
 
   handleClickMore(evt) {
@@ -29,13 +29,13 @@ class MoviesItem extends React.PureComponent {
     }
   }
 
-  _toggleActiveState(value) {
+  toggleActiveState(value) {
     this.setState({
       isActive: value
     });
   }
 
-  _toggleMutedState(value) {
+  toggleMutedState(value) {
     this.setState({
       isMuted: value
     });
@@ -48,7 +48,7 @@ class MoviesItem extends React.PureComponent {
       onMouseEnter();
     }
 
-    this._toggleActiveState(true);
+    this.toggleActiveState(true);
   }
 
   handleMouseLeave() {
@@ -58,7 +58,7 @@ class MoviesItem extends React.PureComponent {
       onMouseLeave();
     }
 
-    this._toggleActiveState(false);
+    this.toggleActiveState(false);
   }
 
   render() {
@@ -72,7 +72,7 @@ class MoviesItem extends React.PureComponent {
     const classNames = `small-movie-card catalog__movies-card ${(isActive) ? `active` : ``}`;
 
     return (<article className={classNames} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
-      <div className="small-movie-card__image" onClick={() => this._toggleMutedState(!this.state.isMuted)}>
+      <div className="small-movie-card__image" onClick={() => this.toggleMutedState(!this.state.isMuted)}>
         <Videoplayer
           poster={poster}
           title={title}
