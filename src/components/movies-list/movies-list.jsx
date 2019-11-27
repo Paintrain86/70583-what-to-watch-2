@@ -11,10 +11,10 @@ class MoviesList extends React.PureComponent {
       activeCard: -1
     };
 
-    this.hoverHandler = this.hoverHandler.bind(this);
+    this.handleHover = this.handleHover.bind(this);
   }
 
-  hoverHandler(index, isHover) {
+  handleHover(index, isHover) {
     this.setState({
       activeCard: (isHover) ? index : -1
     });
@@ -26,19 +26,19 @@ class MoviesList extends React.PureComponent {
       onMoreClick = () => {}
     } = this.props;
 
-    const items = movies.map((item, i) => {
-      return <MoviesItem
+    const items = movies.map((item, i) => (
+      <MoviesItem
         movie={item}
         onMouseEnter={() => {
-          this.hoverHandler(i, true);
+          this.handleHover(i, true);
         }}
         onMouseLeave={() => {
-          this.hoverHandler(i, false);
+          this.handleHover(i, false);
         }}
         isActive={this.state.activeCard === i}
         key={`movie-${i}`}
-      />;
-    });
+      />
+    ));
 
     return (<>
       <div className="catalog__movies-list">

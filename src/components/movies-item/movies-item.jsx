@@ -9,12 +9,12 @@ class MoviesItem extends React.PureComponent {
       isActive: props.isActive
     };
 
-    this.clickMoreHandler = this.clickMoreHandler.bind(this);
-    this.mouseEnterHandler = this.mouseEnterHandler.bind(this);
-    this.mouseLeaveHandler = this.mouseLeaveHandler.bind(this);
+    this.handleClickMore = this.handleClickMore.bind(this);
+    this.handleMouseEnter = this.handleMouseEnter.bind(this);
+    this.handleMouseLeave = this.handleMouseLeave.bind(this);
   }
 
-  clickMoreHandler(evt) {
+  handleClickMore(evt) {
     evt.preventDefault();
 
     const {onNameClick} = this.props;
@@ -30,7 +30,7 @@ class MoviesItem extends React.PureComponent {
     });
   }
 
-  mouseEnterHandler() {
+  handleMouseEnter() {
     const {onMouseEnter} = this.props;
 
     if (typeof onMouseEnter === `function`) {
@@ -40,7 +40,7 @@ class MoviesItem extends React.PureComponent {
     this.toggleActiveState(true);
   }
 
-  mouseLeaveHandler() {
+  handleMouseLeave() {
     const {onMouseLeave} = this.props;
 
     if (typeof onMouseLeave === `function`) {
@@ -59,12 +59,12 @@ class MoviesItem extends React.PureComponent {
 
     const classNames = `small-movie-card catalog__movies-card ${(isActive) ? `active` : ``}`;
 
-    return (<article className={classNames} onMouseEnter={this.mouseEnterHandler} onMouseLeave={this.mouseLeaveHandler}>
+    return (<article className={classNames} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
       <div className="small-movie-card__image">
         <img src={picture} alt={title} width="280" height="175" />
       </div>
       <h3 className="small-movie-card__title">
-        <a className="small-movie-card__link" href="movie-page.html" onClick={this.clickMoreHandler}>{title}</a>
+        <a className="small-movie-card__link" href="movie-page.html" onClick={this.handleClickMore}>{title}</a>
       </h3>
     </article>);
   }
