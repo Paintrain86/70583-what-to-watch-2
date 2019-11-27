@@ -258,15 +258,17 @@ Array [
         className="catalog__movies-list"
       >
         <article
-          className="small-movie-card catalog__movies-card"
+          className="small-movie-card catalog__movies-card "
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
             <img
-              alt="Big Bang Theory"
+              alt="Тестовая киношка"
               height="175"
-              src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+              src="images/image.jpg"
               width="280"
             />
           </div>
@@ -278,20 +280,22 @@ Array [
               href="movie-page.html"
               onClick={[Function]}
             >
-              Big Bang Theory
+              Тестовая киношка
             </a>
           </h3>
         </article>
         <article
-          className="small-movie-card catalog__movies-card"
+          className="small-movie-card catalog__movies-card "
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
             <img
-              alt="Joker"
+              alt="Тестовая киношка2"
               height="175"
-              src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+              src="images/image2.jpg"
               width="280"
             />
           </div>
@@ -303,20 +307,22 @@ Array [
               href="movie-page.html"
               onClick={[Function]}
             >
-              Joker
+              Тестовая киношка2
             </a>
           </h3>
         </article>
         <article
-          className="small-movie-card catalog__movies-card"
+          className="small-movie-card catalog__movies-card "
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
             <img
-              alt="Matrix"
+              alt="Тестовая киношка3"
               height="175"
-              src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+              src="images/image3.jpg"
               width="280"
             />
           </div>
@@ -328,20 +334,22 @@ Array [
               href="movie-page.html"
               onClick={[Function]}
             >
-              Matrix
+              Тестовая киношка3
             </a>
           </h3>
         </article>
         <article
-          className="small-movie-card catalog__movies-card"
+          className="small-movie-card catalog__movies-card "
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
             <img
-              alt="Gorbataya gora"
+              alt="Тестовая киношка4"
               height="175"
-              src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+              src="images/image4.jpg"
               width="280"
             />
           </div>
@@ -353,107 +361,7 @@ Array [
               href="movie-page.html"
               onClick={[Function]}
             >
-              Gorbataya gora
-            </a>
-          </h3>
-        </article>
-        <article
-          className="small-movie-card catalog__movies-card"
-        >
-          <div
-            className="small-movie-card__image"
-          >
-            <img
-              alt="House M.D."
-              height="175"
-              src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
-              width="280"
-            />
-          </div>
-          <h3
-            className="small-movie-card__title"
-          >
-            <a
-              className="small-movie-card__link"
-              href="movie-page.html"
-              onClick={[Function]}
-            >
-              House M.D.
-            </a>
-          </h3>
-        </article>
-        <article
-          className="small-movie-card catalog__movies-card"
-        >
-          <div
-            className="small-movie-card__image"
-          >
-            <img
-              alt="50 first kisses"
-              height="175"
-              src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
-              width="280"
-            />
-          </div>
-          <h3
-            className="small-movie-card__title"
-          >
-            <a
-              className="small-movie-card__link"
-              href="movie-page.html"
-              onClick={[Function]}
-            >
-              50 first kisses
-            </a>
-          </h3>
-        </article>
-        <article
-          className="small-movie-card catalog__movies-card"
-        >
-          <div
-            className="small-movie-card__image"
-          >
-            <img
-              alt="Антикиллер"
-              height="175"
-              src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
-              width="280"
-            />
-          </div>
-          <h3
-            className="small-movie-card__title"
-          >
-            <a
-              className="small-movie-card__link"
-              href="movie-page.html"
-              onClick={[Function]}
-            >
-              Антикиллер
-            </a>
-          </h3>
-        </article>
-        <article
-          className="small-movie-card catalog__movies-card"
-        >
-          <div
-            className="small-movie-card__image"
-          >
-            <img
-              alt="Папины дочки"
-              height="175"
-              src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
-              width="280"
-            />
-          </div>
-          <h3
-            className="small-movie-card__title"
-          >
-            <a
-              className="small-movie-card__link"
-              href="movie-page.html"
-              onClick={[Function]}
-            >
-              Папины дочки
+              Тестовая киношка4
             </a>
           </h3>
         </article>

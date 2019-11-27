@@ -6,15 +6,17 @@ Array [
     className="catalog__movies-list"
   >
     <article
-      className="small-movie-card catalog__movies-card"
+      className="small-movie-card catalog__movies-card "
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
     >
       <div
         className="small-movie-card__image"
       >
         <img
-          alt="test"
+          alt="Тестовая киношка"
           height="175"
-          src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+          src="images/image.jpg"
           width="280"
         />
       </div>
@@ -26,20 +28,22 @@ Array [
           href="movie-page.html"
           onClick={[Function]}
         >
-          test
+          Тестовая киношка
         </a>
       </h3>
     </article>
     <article
-      className="small-movie-card catalog__movies-card"
+      className="small-movie-card catalog__movies-card "
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
     >
       <div
         className="small-movie-card__image"
       >
         <img
-          alt="list"
+          alt="Тестовая киношка2"
           height="175"
-          src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+          src="images/image2.jpg"
           width="280"
         />
       </div>
@@ -51,20 +55,22 @@ Array [
           href="movie-page.html"
           onClick={[Function]}
         >
-          list
+          Тестовая киношка2
         </a>
       </h3>
     </article>
     <article
-      className="small-movie-card catalog__movies-card"
+      className="small-movie-card catalog__movies-card "
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
     >
       <div
         className="small-movie-card__image"
       >
         <img
-          alt="component"
+          alt="Тестовая киношка3"
           height="175"
-          src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+          src="images/image3.jpg"
           width="280"
         />
       </div>
@@ -76,20 +82,22 @@ Array [
           href="movie-page.html"
           onClick={[Function]}
         >
-          component
+          Тестовая киношка3
         </a>
       </h3>
     </article>
     <article
-      className="small-movie-card catalog__movies-card"
+      className="small-movie-card catalog__movies-card "
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
     >
       <div
         className="small-movie-card__image"
       >
         <img
-          alt="snapshot"
+          alt="Тестовая киношка4"
           height="175"
-          src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+          src="images/image4.jpg"
           width="280"
         />
       </div>
@@ -101,7 +109,7 @@ Array [
           href="movie-page.html"
           onClick={[Function]}
         >
-          snapshot
+          Тестовая киношка4
         </a>
       </h3>
     </article>
