@@ -63,9 +63,7 @@ class MoviesItem extends React.PureComponent {
 
   render() {
     const {
-      movie: {title},
-      movie: {poster},
-      movie: {previews},
+      movie: {title, poster, previews},
       isActive
     } = this.props;
 
