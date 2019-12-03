@@ -1,35 +1,86 @@
 const movies = [
   {
+    id: 1,
     title: `Big Bang Theory`,
-    picture: `https://st.kp.yandex.net/images/film_big/306084.jpg`
+    poster: `https://st.kp.yandex.net/images/film_big/306084.jpg`,
+    previews: [
+      {
+        src: `https://fs.kinomania.ru/media/video/9/2e/92e24ce533fadce8dcf9c7feb75f2407.480.mp4`,
+        type: `video/mp4`
+      }
+    ]
   },
   {
+    id: 2,
     title: `Joker`,
-    picture: `https://st.kp.yandex.net/images/film_big/1048334.jpg`
+    poster: `https://st.kp.yandex.net/images/film_big/1048334.jpg`,
+    previews: [
+      {
+        src: `https://fs.kinomania.ru/media/video/f/28/f28543cd7a80815cc0ce17893f2ac0ad.480.mp4`,
+        type: `video/mp4`
+      }
+    ]
   },
   {
+    id: 3,
     title: `Matrix`,
-    picture: `https://st.kp.yandex.net/images/film_big/301.jpg`
+    poster: `https://st.kp.yandex.net/images/film_big/301.jpg`,
+    previews: [
+      {
+        src: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+        type: `video/mp4`
+      }
+    ]
   },
   {
+    id: 4,
     title: `Brokeback Mountain`,
-    picture: `https://st.kp.yandex.net/images/film_big/77647.jpg`
+    poster: `https://st.kp.yandex.net/images/film_big/77647.jpg`,
+    previews: []
   },
   {
+    id: 5,
     title: `House M.D.`,
-    picture: `https://st.kp.yandex.net/images/film_big/178710.jpg`
+    poster: `https://st.kp.yandex.net/images/film_big/178710.jpg`,
+    previews: [
+      {
+        src: `http://media.w3.org/2010/05/bunny/movie.mp4`,
+        type: `video/mp4`
+      }
+    ]
   },
   {
+    id: 6,
     title: `50 first kisses`,
-    picture: `https://st.kp.yandex.net/images/film_big/1794.jpg`
+    poster: `https://st.kp.yandex.net/images/film_big/1794.jpg`,
+    previews: [
+      {
+        src: `'http://media.w3.org/2010/05/sintel/trailer.mp4`,
+        type: `video/mp4`
+      }
+    ]
   },
   {
+    id: 7,
     title: `Антикиллер`,
-    picture: `https://st.kp.yandex.net/images/film_big/41010.jpg`
+    poster: `https://st.kp.yandex.net/images/film_big/41010.jpg`,
+    previews: [
+      {
+        src: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
+        type: `video/webm`
+      }
+    ]
   },
   {
+    id: 8,
     title: `Папины дочки`,
-    picture: `https://st.kp.yandex.net/images/film_big/394047.jpg`
+    poster: `https://st.kp.yandex.net/images/film_big/394047.jpg`,
+    previews: [
+      {
+        src: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
+        type: `video/webm`
+      }
+    ]
   }
 ];
 

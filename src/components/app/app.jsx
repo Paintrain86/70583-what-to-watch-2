@@ -21,8 +21,13 @@ class App extends React.PureComponent {
 
 App.propTypes = {
   movies: PropTypes.arrayOf(PropTypes.shape({
-    title: PropTypes.string,
-    picture: PropTypes.string
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    poster: PropTypes.string.isRequired,
+    previews: PropTypes.arrayOf(PropTypes.shape({
+      src: PropTypes.string,
+      type: PropTypes.string
+    }))
   })).isRequired
 };
 

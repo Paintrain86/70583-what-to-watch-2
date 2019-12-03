@@ -6,12 +6,19 @@ import MoviesItem from './movies-item.jsx';
 Enzyme.configure({adapter: new Adapter()});
 
 describe(`MoviesItem`, () => {
-  it(`it's clickable!`, () => {
+  it(`it should be clickable!`, () => {
     const clickName = jest.fn();
     const testProps = {
       movie: {
+        id: 1,
         title: `Тестовая киношка`,
-        picture: `images/image.jpg`
+        poster: `images/image.jpg`,
+        previews: [
+          {
+            src: `movies/movie.mp4`,
+            type: `video/mp4`
+          }
+        ]
       },
       isActive: false,
       onNameClick: clickName
@@ -26,18 +33,26 @@ describe(`MoviesItem`, () => {
     expect(clickName).toHaveBeenCalledTimes(1);
   });
 
-  it(`it's hoverable`, () => {
+  it(`it should be hoverable`, () => {
     const onEnter = jest.fn();
     const onLeave = jest.fn();
     const testProps = {
       movie: {
+        id: 1,
         title: `Тестовая киношка`,
-        picture: `images/image.jpg`
+        poster: `images/image.jpg`,
+        previews: [
+          {
+            src: `movies/movie.mp4`,
+            type: `video/mp4`
+          }
+        ]
       },
       isActive: false,
       onMouseEnter: onEnter,
       onMouseLeave: onLeave
     };
+
     const movie = shallow(<MoviesItem {...testProps}/>);
 
     expect(movie.state(`isActive`)).toBe(false);
