@@ -6,7 +6,7 @@ import MoviesList from './movies-list.jsx';
 Enzyme.configure({adapter: new Adapter()});
 
 describe(`MoviesList`, () => {
-  it(`More button is clickable!`, () => {
+  it(`More button should be clickable!`, () => {
     const clickMore = jest.fn();
     const testProps = {
       movies: [

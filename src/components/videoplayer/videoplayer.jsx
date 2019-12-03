@@ -5,38 +5,29 @@ class Videoplayer extends React.PureComponent {
   constructor(props) {
     super(props);
 
-    this.state = {
-      progress: 0,
-      isNeedPlaying: props.isNeedPlaying,
-      isPlaying: false
-    };
     this._videoRef = React.createRef();
 
     this.timeout = 1000;
-    this._playTimeout = null;
+    this.playTimeoutId = null;
 
-    this._managePlayingVideo = this._managePlayingVideo.bind(this);
-    this._clearTimeoutWithPlay = this._clearTimeoutWithPlay.bind(this);
+    this.managePlayingVideo = this.managePlayingVideo.bind(this);
+    this.clearTimeoutWithPlay = this.clearTimeoutWithPlay.bind(this);
   }
 
-  _clearTimeoutWithPlay(value) {
-    this.setState({
-      isPlaying: value
-    }, () => {
-      clearTimeout(this._playTimeout);
-      this._playTimeout = null;
-    });
+  clearTimeoutWithPlay(value) {
+    clearTimeout(this.playTimeoutId);
+    this.playTimeoutId = null;
+
+    return this._player && this._player[(value) ? `play` : `load`]();
   }
 
-  _managePlayingVideo() {
-    if (this.state.isNeedPlaying) {
-      if (!this.state.isPlaying && this._playTimeout === null) {
-        this._playTimeout = setTimeout(() => {
-          this._clearTimeoutWithPlay(true);
-        }, this.timeout);
-      }
+  managePlayingVideo(isNeedPlaying) {
+    if (isNeedPlaying) {
+      this.playTimeoutId = setTimeout(() => {
+        this._player.play();
+      }, this.timeout);
     } else {
-      this._clearTimeoutWithPlay(false);
+      this.clearTimeoutWithPlay(isNeedPlaying);
     }
   }
 
@@ -50,20 +41,11 @@ class Videoplayer extends React.PureComponent {
     }
   }
 
-  componentDidUpdate() {
-    if (this.props.isNeedPlaying !== this.state.isNeedPlaying) {
-      this.setState({
-        isNeedPlaying: this.props.isNeedPlaying
-      });
-    } else {
-      if (this._player !== null) {
-        this._managePlayingVideo();
-        if (this.state.isPlaying) {
-          this._player.play();
-        } else {
-          this._player.load();
-        }
-      }
+  componentDidUpdate(prevProps) {
+    const {isNeedPlaying} = this.props;
+
+    if (isNeedPlaying !== prevProps.isNeedPlaying) {
+      this.managePlayingVideo(isNeedPlaying);
     }
   }
 

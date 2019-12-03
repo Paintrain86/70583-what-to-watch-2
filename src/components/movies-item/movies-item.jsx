@@ -69,16 +69,20 @@ class MoviesItem extends React.PureComponent {
       isActive
     } = this.props;
 
+    const {
+      isMuted
+    } = this.state;
+
     const classNames = `small-movie-card catalog__movies-card ${(isActive) ? `active` : ``}`;
 
     return (<article className={classNames} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
-      <div className="small-movie-card__image" onClick={() => this.toggleMutedState(!this.state.isMuted)}>
+      <div className="small-movie-card__image" onClick={this.toggleMutedState.bind(this, !isMuted)}>
         <Videoplayer
           poster={poster}
           title={title}
           previews={previews}
           isNeedPlaying={isActive}
-          isMuted={this.state.isMuted}
+          isMuted={isMuted}
         />
       </div>
       <h3 className="small-movie-card__title">

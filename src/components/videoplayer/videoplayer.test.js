@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import Videoplayer from './videoplayer.jsx';
 
 describe(`Videoplayer`, () => {
-  it(`component is rendered correctly`, () => {
+  it(`component should rendered correctly`, () => {
     const testProps = {
       id: 1,
       title: `Тестовая киношка`,

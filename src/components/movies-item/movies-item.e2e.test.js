@@ -6,7 +6,7 @@ import MoviesItem from './movies-item.jsx';
 Enzyme.configure({adapter: new Adapter()});
 
 describe(`MoviesItem`, () => {
-  it(`it's clickable!`, () => {
+  it(`it should be clickable!`, () => {
     const clickName = jest.fn();
     const testProps = {
       movie: {
@@ -33,7 +33,7 @@ describe(`MoviesItem`, () => {
     expect(clickName).toHaveBeenCalledTimes(1);
   });
 
-  it(`it's hoverable`, () => {
+  it(`it should be hoverable`, () => {
     const onEnter = jest.fn();
     const onLeave = jest.fn();
     const testProps = {
