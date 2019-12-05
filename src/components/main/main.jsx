@@ -7,7 +7,7 @@ import {ActionCreator} from '../../reducer.js';
 import MoviesList from '../movies-list/movies-list.jsx';
 import Filter from '../filter/filter.jsx';
 
-const filterItems = [
+const filters = [
   {
     genre: ``,
     name: `All genres`
@@ -121,7 +121,7 @@ class Main extends React.PureComponent {
           <h2 className="catalog__title visually-hidden">Catalog</h2>
 
           <Filter
-            filters={filterItems}
+            filterItems={filters}
             onFilterChange={this.props.onFilterChanged}
           />
 
@@ -163,9 +163,8 @@ Main.propTypes = {
   onFilterChanged: PropTypes.func.isRequired
 };
 
-
 const mapStateToProps = (storeState, mainProps) => Object.assign({}, mainProps, {
-  movies: storeState.movies
+  movies: storeState.currentMovies
 });
 const mapDispatchToProps = (dispatch) => ({
   onFilterChanged: (value) => {

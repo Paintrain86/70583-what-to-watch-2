@@ -24,11 +24,11 @@ const reducer = (state = initialState, action) => {
       });
     case `GET_MOVIES`:
       return Object.assign({}, state, {
-        currentMovies: state.currentMovies.map((it) => (it.genre === action.payload || action.payload === ``))
+        currentMovies: movies.filter((it) => (it.genre === action.payload || action.payload === ``))
       });
     default:
       return state;
   }
 };
 
-export default {ActionCreator, reducer};
+export {ActionCreator, reducer};
