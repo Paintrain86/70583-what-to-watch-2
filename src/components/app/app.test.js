@@ -1,5 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
+import {reducer} from '../../reducer.js';
+
 import App from './app.jsx';
 
 describe(`App`, () => {
@@ -7,6 +12,7 @@ describe(`App`, () => {
     const testMovies = [
       {
         id: 1,
+        genre: `blyat`,
         title: `Тестовая киношка`,
         poster: `images/image.jpg`,
         previews: [
@@ -18,6 +24,7 @@ describe(`App`, () => {
       },
       {
         id: 2,
+        genre: `blyat`,
         title: `Тестовая киношка2`,
         poster: `images/image2.jpg`,
         previews: [
@@ -28,9 +35,16 @@ describe(`App`, () => {
         ]
       }
     ];
+    const store = createStore(reducer);
 
     const markup = renderer
-      .create(<App movies={testMovies}/>)
+      .create(
+          <Provider store={store}>
+            <App
+              movies={testMovies}
+            />
+          </Provider>
+      )
       .toJSON();
 
     expect(markup).toMatchSnapshot();
