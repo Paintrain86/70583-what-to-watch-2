@@ -15,6 +15,10 @@ class Filter extends React.PureComponent {
   handleFilterChange(value, evt) {
     evt.preventDefault();
 
+    if (typeof this.props.onFilterChange === `function`) {
+      this.props.onFilterChange(value);
+    }
+
     this.setState({
       currentGenre: value
     });
@@ -39,10 +43,11 @@ class Filter extends React.PureComponent {
 }
 
 Filter.propTypes = {
-  filterItems: PropTypes.arrayOf(PropTypes.shapeOf({
+  filterItems: PropTypes.arrayOf(PropTypes.shape({
     genre: PropTypes.string,
     name: PropTypes.string.isRequired
-  }))
+  })),
+  onFilterChange: PropTypes.func
 };
 
 

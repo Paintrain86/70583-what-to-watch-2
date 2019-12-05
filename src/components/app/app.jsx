@@ -1,9 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
 
-import {connect} from 'react-redux';
-import {ActionCreator} from '../../reducer';
-
 import Main from "../main/main.jsx";
 
 class App extends React.PureComponent {
@@ -35,10 +32,4 @@ App.propTypes = {
   })).isRequired
 };
 
-const mapStateToProps = (storeState, appProps) => Object.assign({}, appProps, {
-  movies: storeState.movies
-});
-const mapDispatchToProps = () => {};
-
-export {App};
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
