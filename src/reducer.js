@@ -27,7 +27,7 @@ const reducer = (state = initialState, action) => {
         currentMovies: movies.filter((it) => (it.genre === action.payload || action.payload === ``))
       });
     default:
-      return state;
+      return initialState;
   }
 };
 
