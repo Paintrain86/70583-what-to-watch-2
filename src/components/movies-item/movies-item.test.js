@@ -2,20 +2,23 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import MoviesItem from './movies-item.jsx';
 
+const testMoviesItem = {
+  id: 1,
+  genre: `documentary`,
+  title: `Тестовая киношка`,
+  poster: `images/image.jpg`,
+  previews: [
+    {
+      src: `movies/movie.mp4`,
+      type: `video/mp4`
+    }
+  ]
+};
+
 describe(`MoviesItem`, () => {
-  it(`component is rendered correctly`, () => {
+  it(`MoviesItem should render correctly`, () => {
     const testProps = {
-      movie: {
-        id: 1,
-        title: `Тестовая киношка`,
-        poster: `images/image.jpg`,
-        previews: [
-          {
-            src: `movies/movie.mp4`,
-            type: `video/mp4`
-          }
-        ]
-      },
+      movie: testMoviesItem,
       isActive: false
     };
 

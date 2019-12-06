@@ -1,6 +1,7 @@
 const movies = [
   {
     id: 1,
+    genre: `comedy`,
     title: `Big Bang Theory`,
     poster: `https://st.kp.yandex.net/images/film_big/306084.jpg`,
     previews: [
@@ -12,6 +13,7 @@ const movies = [
   },
   {
     id: 2,
+    genre: `drama`,
     title: `Joker`,
     poster: `https://st.kp.yandex.net/images/film_big/1048334.jpg`,
     previews: [
@@ -23,6 +25,7 @@ const movies = [
   },
   {
     id: 3,
+    genre: `sci-fi`,
     title: `Matrix`,
     poster: `https://st.kp.yandex.net/images/film_big/301.jpg`,
     previews: [
@@ -34,12 +37,14 @@ const movies = [
   },
   {
     id: 4,
+    genre: `drama`,
     title: `Brokeback Mountain`,
     poster: `https://st.kp.yandex.net/images/film_big/77647.jpg`,
     previews: []
   },
   {
     id: 5,
+    genre: `drama`,
     title: `House M.D.`,
     poster: `https://st.kp.yandex.net/images/film_big/178710.jpg`,
     previews: [
@@ -51,6 +56,7 @@ const movies = [
   },
   {
     id: 6,
+    genre: `comedy`,
     title: `50 first kisses`,
     poster: `https://st.kp.yandex.net/images/film_big/1794.jpg`,
     previews: [
@@ -62,6 +68,7 @@ const movies = [
   },
   {
     id: 7,
+    genre: `documentary`,
     title: `Антикиллер`,
     poster: `https://st.kp.yandex.net/images/film_big/41010.jpg`,
     previews: [
@@ -73,6 +80,7 @@ const movies = [
   },
   {
     id: 8,
+    genre: `crime`,
     title: `Папины дочки`,
     poster: `https://st.kp.yandex.net/images/film_big/394047.jpg`,
     previews: [

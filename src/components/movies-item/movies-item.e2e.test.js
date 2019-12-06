@@ -5,21 +5,24 @@ import MoviesItem from './movies-item.jsx';
 
 Enzyme.configure({adapter: new Adapter()});
 
+const testMoviesItem = {
+  id: 1,
+  genre: `documentary`,
+  title: `Тестовая киношка`,
+  poster: `images/image.jpg`,
+  previews: [
+    {
+      src: `movies/movie.mp4`,
+      type: `video/mp4`
+    }
+  ]
+};
+
 describe(`MoviesItem`, () => {
-  it(`it should be clickable!`, () => {
+  it(`MoviesItem should be clickable!`, () => {
     const clickName = jest.fn();
     const testProps = {
-      movie: {
-        id: 1,
-        title: `Тестовая киношка`,
-        poster: `images/image.jpg`,
-        previews: [
-          {
-            src: `movies/movie.mp4`,
-            type: `video/mp4`
-          }
-        ]
-      },
+      movie: testMoviesItem,
       isActive: false,
       onNameClick: clickName
     };
@@ -33,21 +36,11 @@ describe(`MoviesItem`, () => {
     expect(clickName).toHaveBeenCalledTimes(1);
   });
 
-  it(`it should be hoverable`, () => {
+  it(`MoviesItem should be hoverable`, () => {
     const onEnter = jest.fn();
     const onLeave = jest.fn();
     const testProps = {
-      movie: {
-        id: 1,
-        title: `Тестовая киношка`,
-        poster: `images/image.jpg`,
-        previews: [
-          {
-            src: `movies/movie.mp4`,
-            type: `video/mp4`
-          }
-        ]
-      },
+      movie: testMoviesItem,
       isActive: false,
       onMouseEnter: onEnter,
       onMouseLeave: onLeave

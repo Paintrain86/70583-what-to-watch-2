@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App component is rendered correctly 1`] = `
+exports[`App App should render correctly 1`] = `
 Array [
   <section
     className="movie-card"
@@ -159,6 +159,7 @@ Array [
           <a
             className="catalog__genres-link"
             href="#"
+            onClick={[Function]}
           >
             All genres
           </a>
@@ -169,6 +170,7 @@ Array [
           <a
             className="catalog__genres-link"
             href="#"
+            onClick={[Function]}
           >
             Comedies
           </a>
@@ -179,6 +181,7 @@ Array [
           <a
             className="catalog__genres-link"
             href="#"
+            onClick={[Function]}
           >
             Crime
           </a>
@@ -189,6 +192,7 @@ Array [
           <a
             className="catalog__genres-link"
             href="#"
+            onClick={[Function]}
           >
             Documentary
           </a>
@@ -199,6 +203,7 @@ Array [
           <a
             className="catalog__genres-link"
             href="#"
+            onClick={[Function]}
           >
             Dramas
           </a>
@@ -209,6 +214,7 @@ Array [
           <a
             className="catalog__genres-link"
             href="#"
+            onClick={[Function]}
           >
             Horror
           </a>
@@ -219,6 +225,7 @@ Array [
           <a
             className="catalog__genres-link"
             href="#"
+            onClick={[Function]}
           >
             Kids & Family
           </a>
@@ -229,6 +236,7 @@ Array [
           <a
             className="catalog__genres-link"
             href="#"
+            onClick={[Function]}
           >
             Romance
           </a>
@@ -239,6 +247,7 @@ Array [
           <a
             className="catalog__genres-link"
             href="#"
+            onClick={[Function]}
           >
             Sci-Fi
           </a>
@@ -249,6 +258,7 @@ Array [
           <a
             className="catalog__genres-link"
             href="#"
+            onClick={[Function]}
           >
             Thrillers
           </a>
@@ -268,11 +278,11 @@ Array [
           >
             <video
               muted={true}
-              poster="images/image.jpg"
+              poster="https://st.kp.yandex.net/images/film_big/306084.jpg"
               width="100%"
             >
               <source
-                src="movies/movie.mp4"
+                src="https://fs.kinomania.ru/media/video/9/2e/92e24ce533fadce8dcf9c7feb75f2407.480.mp4"
                 type="video/mp4"
               />
               Sorry, your browser is a piece of shit
@@ -286,7 +296,7 @@ Array [
               href="movie-page.html"
               onClick={[Function]}
             >
-              Тестовая киношка
+              Big Bang Theory
             </a>
           </h3>
         </article>
@@ -301,11 +311,11 @@ Array [
           >
             <video
               muted={true}
-              poster="images/image2.jpg"
+              poster="https://st.kp.yandex.net/images/film_big/1048334.jpg"
               width="100%"
             >
               <source
-                src="movies/movie2.mp4"
+                src="https://fs.kinomania.ru/media/video/f/28/f28543cd7a80815cc0ce17893f2ac0ad.480.mp4"
                 type="video/mp4"
               />
               Sorry, your browser is a piece of shit
@@ -319,7 +329,200 @@ Array [
               href="movie-page.html"
               onClick={[Function]}
             >
-              Тестовая киношка2
+              Joker
+            </a>
+          </h3>
+        </article>
+        <article
+          className="small-movie-card catalog__movies-card "
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <div
+            className="small-movie-card__image"
+            onClick={[Function]}
+          >
+            <video
+              muted={true}
+              poster="https://st.kp.yandex.net/images/film_big/301.jpg"
+              width="100%"
+            >
+              <source
+                src="https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
+                type="video/mp4"
+              />
+              Sorry, your browser is a piece of shit
+            </video>
+          </div>
+          <h3
+            className="small-movie-card__title"
+          >
+            <a
+              className="small-movie-card__link"
+              href="movie-page.html"
+              onClick={[Function]}
+            >
+              Matrix
+            </a>
+          </h3>
+        </article>
+        <article
+          className="small-movie-card catalog__movies-card "
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <div
+            className="small-movie-card__image"
+            onClick={[Function]}
+          >
+            <img
+              alt="Brokeback Mountain"
+              height="175"
+              src="https://st.kp.yandex.net/images/film_big/77647.jpg"
+              width="280"
+            />
+          </div>
+          <h3
+            className="small-movie-card__title"
+          >
+            <a
+              className="small-movie-card__link"
+              href="movie-page.html"
+              onClick={[Function]}
+            >
+              Brokeback Mountain
+            </a>
+          </h3>
+        </article>
+        <article
+          className="small-movie-card catalog__movies-card "
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <div
+            className="small-movie-card__image"
+            onClick={[Function]}
+          >
+            <video
+              muted={true}
+              poster="https://st.kp.yandex.net/images/film_big/178710.jpg"
+              width="100%"
+            >
+              <source
+                src="http://media.w3.org/2010/05/bunny/movie.mp4"
+                type="video/mp4"
+              />
+              Sorry, your browser is a piece of shit
+            </video>
+          </div>
+          <h3
+            className="small-movie-card__title"
+          >
+            <a
+              className="small-movie-card__link"
+              href="movie-page.html"
+              onClick={[Function]}
+            >
+              House M.D.
+            </a>
+          </h3>
+        </article>
+        <article
+          className="small-movie-card catalog__movies-card "
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <div
+            className="small-movie-card__image"
+            onClick={[Function]}
+          >
+            <video
+              muted={true}
+              poster="https://st.kp.yandex.net/images/film_big/1794.jpg"
+              width="100%"
+            >
+              <source
+                src="'http://media.w3.org/2010/05/sintel/trailer.mp4"
+                type="video/mp4"
+              />
+              Sorry, your browser is a piece of shit
+            </video>
+          </div>
+          <h3
+            className="small-movie-card__title"
+          >
+            <a
+              className="small-movie-card__link"
+              href="movie-page.html"
+              onClick={[Function]}
+            >
+              50 first kisses
+            </a>
+          </h3>
+        </article>
+        <article
+          className="small-movie-card catalog__movies-card "
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <div
+            className="small-movie-card__image"
+            onClick={[Function]}
+          >
+            <video
+              muted={true}
+              poster="https://st.kp.yandex.net/images/film_big/41010.jpg"
+              width="100%"
+            >
+              <source
+                src="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
+                type="video/webm"
+              />
+              Sorry, your browser is a piece of shit
+            </video>
+          </div>
+          <h3
+            className="small-movie-card__title"
+          >
+            <a
+              className="small-movie-card__link"
+              href="movie-page.html"
+              onClick={[Function]}
+            >
+              Антикиллер
+            </a>
+          </h3>
+        </article>
+        <article
+          className="small-movie-card catalog__movies-card "
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <div
+            className="small-movie-card__image"
+            onClick={[Function]}
+          >
+            <video
+              muted={true}
+              poster="https://st.kp.yandex.net/images/film_big/394047.jpg"
+              width="100%"
+            >
+              <source
+                src="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
+                type="video/webm"
+              />
+              Sorry, your browser is a piece of shit
+            </video>
+          </div>
+          <h3
+            className="small-movie-card__title"
+          >
+            <a
+              className="small-movie-card__link"
+              href="movie-page.html"
+              onClick={[Function]}
+            >
+              Папины дочки
             </a>
           </h3>
         </article>

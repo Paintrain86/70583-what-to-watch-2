@@ -63,9 +63,7 @@ class MoviesItem extends React.PureComponent {
 
   render() {
     const {
-      movie: {title},
-      movie: {poster},
-      movie: {previews},
+      movie: {title, poster, previews},
       isActive
     } = this.props;
 
@@ -95,6 +93,7 @@ class MoviesItem extends React.PureComponent {
 MoviesItem.propTypes = {
   movie: PropTypes.shape({
     id: PropTypes.number.isRequired,
+    genre: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     poster: PropTypes.string.isRequired,
     previews: PropTypes.arrayOf(PropTypes.shape({
