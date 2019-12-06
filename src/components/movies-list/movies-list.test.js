@@ -30,7 +30,7 @@ const testMovies = [
 ];
 
 describe(`MoviesList`, () => {
-  it(`component should render correctly`, () => {
+  it(`MoviesList should render correctly`, () => {
     const markup = renderer
       .create(<MoviesList movies={testMovies}/>)
       .toJSON();

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import {connect} from 'react-redux';
-import {ActionCreator} from '../../reducer.js';
+import {actionCreator} from '../../reducer.js';
 
 import MoviesList from '../movies-list/movies-list.jsx';
 import Filter from '../filter/filter.jsx';
@@ -168,8 +168,8 @@ const mapStateToProps = (storeState, mainProps) => Object.assign({}, mainProps, 
 });
 const mapDispatchToProps = (dispatch) => ({
   onFilterChanged: (value) => {
-    dispatch(ActionCreator.chooseGenre(value));
-    dispatch(ActionCreator.chooseMovies(value));
+    dispatch(actionCreator.chooseGenre(value));
+    dispatch(actionCreator.chooseMovies(value));
   }
 });
 

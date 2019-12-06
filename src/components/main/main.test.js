@@ -30,7 +30,7 @@ const testMovies = [
 ];
 
 describe(`Main`, () => {
-  it(`component is rendered correctly`, () => {
+  it(`Main should render correctly`, () => {
 
     const markup = renderer
       .create(<Main

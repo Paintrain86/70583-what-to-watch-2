@@ -15,9 +15,7 @@ class Filter extends React.PureComponent {
   handleFilterChange(value, evt) {
     evt.preventDefault();
 
-    if (typeof this.props.onFilterChange === `function`) {
-      this.props.onFilterChange(value);
-    }
+    this.props.onFilterChange(value);
 
     this.setState({
       currentGenre: value
@@ -29,15 +27,13 @@ class Filter extends React.PureComponent {
       filterItems
     } = this.props;
     return (
-      <>
-        <ul className="catalog__genres-list">
-          {filterItems.map((it, i) => (
-            <li className={(this.state.currentGenre === it.genre) ? `catalog__genres-item catalog__genres-item--active` : `catalog__genres-item`} key={`genre-${i}`}>
-              <a href="#" className="catalog__genres-link" onClick={this.handleFilterChange.bind(this, it.genre)}>{it.name}</a>
-            </li>
-          ))}
-        </ul>
-      </>
+      <ul className="catalog__genres-list">
+        {filterItems.map((it, i) => (
+          <li className={(this.state.currentGenre === it.genre) ? `catalog__genres-item catalog__genres-item--active` : `catalog__genres-item`} key={`genre-${it.genre}-${i}`}>
+            <a href="#" className="catalog__genres-link" onClick={this.handleFilterChange.bind(this, it.genre)}>{it.name}</a>
+          </li>
+        ))}
+      </ul>
     );
   }
 }
@@ -47,7 +43,7 @@ Filter.propTypes = {
     genre: PropTypes.string,
     name: PropTypes.string.isRequired
   })),
-  onFilterChange: PropTypes.func
+  onFilterChange: PropTypes.func.isRequired
 };
 
 

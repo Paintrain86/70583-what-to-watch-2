@@ -18,9 +18,9 @@ const filters = [
 ];
 
 describe(`Filter`, () => {
-  it(`component should render correctly`, () => {
+  it(`Filter should render correctly`, () => {
     const markup = renderer
-      .create(<Filter filterItems={filters}/>)
+      .create(<Filter filterItems={filters} onFilterChange={()=>{}}/>)
       .toJSON();
 
     expect(markup).toMatchSnapshot();

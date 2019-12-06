@@ -19,7 +19,7 @@ const testMoviesItem = {
 };
 
 describe(`MoviesItem`, () => {
-  it(`it should be clickable!`, () => {
+  it(`MoviesItem should be clickable!`, () => {
     const clickName = jest.fn();
     const testProps = {
       movie: testMoviesItem,
@@ -36,7 +36,7 @@ describe(`MoviesItem`, () => {
     expect(clickName).toHaveBeenCalledTimes(1);
   });
 
-  it(`it should be hoverable`, () => {
+  it(`MoviesItem should be hoverable`, () => {
     const onEnter = jest.fn();
     const onLeave = jest.fn();
     const testProps = {

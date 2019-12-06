@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Videoplayer component should rendered correctly 1`] = `
+exports[`Videoplayer Videoplayer should render correctly 1`] = `
 <video
   poster="images/image.jpg"
   width="100%"

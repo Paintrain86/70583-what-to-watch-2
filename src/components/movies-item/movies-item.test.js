@@ -16,7 +16,7 @@ const testMoviesItem = {
 };
 
 describe(`MoviesItem`, () => {
-  it(`component is rendered correctly`, () => {
+  it(`MoviesItem should render correctly`, () => {
     const testProps = {
       movie: testMoviesItem,
       isActive: false

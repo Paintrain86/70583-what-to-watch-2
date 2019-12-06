@@ -20,7 +20,7 @@ describe(`Videoplayer`, () => {
     ]
   };
 
-  it(`video should play with delay`, () => {
+  it(`Video should play with delay`, () => {
     const playStub = jest
       .spyOn(global.HTMLMediaElement.prototype, `play`)
       .mockImplementation(() => {});
@@ -34,7 +34,7 @@ describe(`Videoplayer`, () => {
     expect(playStub).toHaveBeenCalled();
   });
 
-  it(`video should reset after changing props to false`, () => {
+  it(`Video should reset after changing props to false`, () => {
     const loadStub = jest
       .spyOn(global.HTMLMediaElement.prototype, `load`)
       .mockImplementation(() => {});

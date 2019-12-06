@@ -5,7 +5,7 @@ const initialState = {
   currentMovies: movies
 };
 
-const ActionCreator = {
+const actionCreator = {
   chooseGenre: (genre) => ({
     type: `FILTER_CHANGED`,
     payload: genre
@@ -31,4 +31,4 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-export {ActionCreator, reducer};
+export {actionCreator, reducer};
