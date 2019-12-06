@@ -28,8 +28,8 @@ class Filter extends React.PureComponent {
     } = this.props;
     return (
       <ul className="catalog__genres-list">
-        {filterItems.map((it, i) => (
-          <li className={(this.state.currentGenre === it.genre) ? `catalog__genres-item catalog__genres-item--active` : `catalog__genres-item`} key={`genre-${it.genre}-${i}`}>
+        {filterItems.map((it) => (
+          <li className={(this.state.currentGenre === it.genre) ? `catalog__genres-item catalog__genres-item--active` : `catalog__genres-item`} key={`genre-${it.genre}`}>
             <a href="#" className="catalog__genres-link" onClick={this.handleFilterChange.bind(this, it.genre)}>{it.name}</a>
           </li>
         ))}
