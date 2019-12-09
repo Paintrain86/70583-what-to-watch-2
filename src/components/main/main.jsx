@@ -9,42 +9,52 @@ import Filter from '../filter/filter.jsx';
 
 const filters = [
   {
+    id: 0,
     genre: ``,
     name: `All genres`
   },
   {
+    id: 1,
     genre: `comedy`,
     name: `Comedies`
   },
   {
+    id: 2,
     genre: `crime`,
     name: `Crime`
   },
   {
+    id: 3,
     genre: `documentary`,
     name: `Documentary`
   },
   {
+    id: 4,
     genre: `drama`,
     name: `Dramas`
   },
   {
+    id: 5,
     genre: `horror`,
     name: `Horror`
   },
   {
+    id: 6,
     genre: `family`,
     name: `Kids & Family`
   },
   {
+    id: 7,
     genre: `romance`,
     name: `Romance`
   },
   {
+    id: 8,
     genre: `sci-fi`,
     name: `Sci-Fi`
   },
   {
+    id: 9,
     genre: `thriller`,
     name: `Thrillers`
   }
