@@ -7,54 +7,48 @@ import {actionCreator} from '../../reducer.js';
 import MoviesList from '../movies-list/movies-list.jsx';
 import Filter from '../filter/filter.jsx';
 
+import withActiveItem from '../../hocs/with-active-item/with-active-item.js';
+
+const FilterWrapped = withActiveItem(Filter);
+
 const filters = [
   {
-    id: 0,
     genre: ``,
     name: `All genres`
   },
   {
-    id: 1,
     genre: `comedy`,
     name: `Comedies`
   },
   {
-    id: 2,
     genre: `crime`,
     name: `Crime`
   },
   {
-    id: 3,
     genre: `documentary`,
     name: `Documentary`
   },
   {
-    id: 4,
     genre: `drama`,
     name: `Dramas`
   },
   {
-    id: 5,
     genre: `horror`,
     name: `Horror`
   },
   {
-    id: 6,
     genre: `family`,
     name: `Kids & Family`
   },
   {
-    id: 7,
     genre: `romance`,
     name: `Romance`
   },
   {
-    id: 8,
     genre: `sci-fi`,
     name: `Sci-Fi`
   },
   {
-    id: 9,
     genre: `thriller`,
     name: `Thrillers`
   }
@@ -130,7 +124,7 @@ class Main extends React.PureComponent {
         <section className="catalog">
           <h2 className="catalog__title visually-hidden">Catalog</h2>
 
-          <Filter
+          <FilterWrapped
             filterItems={filters}
             onFilterChange={this.props.onFilterChanged}
           />
