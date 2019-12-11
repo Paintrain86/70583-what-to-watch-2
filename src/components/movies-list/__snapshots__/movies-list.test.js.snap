@@ -6,7 +6,7 @@ Array [
     className="catalog__movies-list"
   >
     <article
-      className="small-movie-card catalog__movies-card "
+      className="small-movie-card catalog__movies-card active"
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
     >

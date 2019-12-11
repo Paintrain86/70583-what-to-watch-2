@@ -7,23 +7,18 @@ class MoviesList extends React.PureComponent {
   constructor(props) {
     super(props);
 
-    this.state = {
-      activeCard: -1
-    };
-
     this.handleHover = this.handleHover.bind(this);
   }
 
-  handleHover(index, isHover) {
-    this.setState({
-      activeCard: (isHover) ? index : -1
-    });
+  handleHover(id, isHover) {
+    this.props.onActiveItemChange((isHover) ? id : -1);
   }
 
   render() {
     const {
       movies,
-      onMoreClick = () => {}
+      onMoreClick = () => {},
+      activeItem
     } = this.props;
 
     const items = movies.map((item) => (
@@ -35,7 +30,7 @@ class MoviesList extends React.PureComponent {
         onMouseLeave={() => {
           this.handleHover(item.id, false);
         }}
-        isActive={this.state.activeCard === item.id}
+        isActive={item.id === activeItem}
         key={`movie-${item.id}`}
       />
     ));
@@ -62,7 +57,12 @@ MoviesList.propTypes = {
       type: PropTypes.string
     }))
   })).isRequired,
-  onMoreClick: PropTypes.func
+  onMoreClick: PropTypes.func,
+  activeItem: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string
+  ]).isRequired,
+  onActiveItemChange: PropTypes.func.isRequired
 };
 
 export default MoviesList;
