@@ -35,9 +35,14 @@ const testMovies = [
 describe(`MoviesList`, () => {
   it(`More button should be clickable!`, () => {
     const clickMore = jest.fn();
+    const onActiveChange = jest.fn();
+    const activeId = 1;
+
     const testProps = {
       movies: testMovies,
-      onMoreClick: clickMore
+      onMoreClick: clickMore,
+      activeItem: activeId,
+      onActiveItemChange: onActiveChange
     };
 
     const moviesList = shallow(<MoviesList {...testProps}/>);

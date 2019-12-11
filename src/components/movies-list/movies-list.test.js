@@ -32,7 +32,11 @@ const testMovies = [
 describe(`MoviesList`, () => {
   it(`MoviesList should render correctly`, () => {
     const markup = renderer
-      .create(<MoviesList movies={testMovies}/>)
+      .create(<MoviesList
+        movies={testMovies}
+        activeItem={1}
+        onActiveItemChange={jest.fn()}
+      />)
       .toJSON();
 
     expect(markup).toMatchSnapshot();

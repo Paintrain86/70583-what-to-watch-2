@@ -10,6 +10,7 @@ import Filter from '../filter/filter.jsx';
 import withActiveItem from '../../hocs/with-active-item/with-active-item.js';
 
 const FilterWrapped = withActiveItem(Filter);
+const MoviesListWrapped = withActiveItem(MoviesList);
 
 const filters = [
   {
@@ -129,7 +130,7 @@ class Main extends React.PureComponent {
             onFilterChange={this.props.onFilterChanged}
           />
 
-          <MoviesList
+          <MoviesListWrapped
             movies={movies}
             onMoreClick={() => {}}
           />

@@ -20,7 +20,12 @@ const filters = [
 describe(`Filter`, () => {
   it(`Filter should render correctly`, () => {
     const markup = renderer
-      .create(<Filter filterItems={filters} onFilterChange={()=>{}}/>)
+      .create(<Filter
+        filterItems={filters}
+        onFilterChange={jest.fn()}
+        activeItem={`crime`}
+        onActiveItemChange={jest.fn()}
+      />)
       .toJSON();
 
     expect(markup).toMatchSnapshot();
