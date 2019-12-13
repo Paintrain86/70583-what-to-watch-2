@@ -1,8 +1,9 @@
-import movies from './mocks/films.js';
+import api from './api.js';
 
 const initialState = {
+  movies: [],
   currentGenre: ``,
-  currentMovies: movies
+  currentMovies: []
 };
 
 const actionCreator = {
@@ -13,7 +14,20 @@ const actionCreator = {
   chooseMovies: (genre) => ({
     type: `GET_MOVIES`,
     payload: genre
+  }),
+  loadMovies: (movies) => ({
+    type: `LOAD_MOVIES`,
+    payload: movies
   })
+};
+
+const operation = {
+  loadMovies: () => (dispatch) => {
+    return api.get(`/films`)
+      .then((response) => {
+        dispatch(actionCreator.loadMovies(response));
+      });
+  }
 };
 
 const reducer = (state = initialState, action) => {
@@ -22,13 +36,20 @@ const reducer = (state = initialState, action) => {
       return Object.assign({}, state, {
         currentGenre: action.payload
       });
+
     case `GET_MOVIES`:
       return Object.assign({}, state, {
-        currentMovies: movies.filter((it) => (it.genre === action.payload || action.payload === ``))
+        currentMovies: initialState.movies.filter((it) => (it.genre === action.payload || action.payload === ``))
       });
+
+    case `LOAD_MOVIES`:
+      return Object.assign({}, state, {
+        movies: action.payload
+      });
+
     default:
       return initialState;
   }
 };
 
-export {actionCreator, reducer};
+export {actionCreator, operation, reducer};
